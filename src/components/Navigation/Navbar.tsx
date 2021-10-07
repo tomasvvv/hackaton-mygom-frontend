@@ -21,6 +21,9 @@ export const Navbar = React.memo(() => {
           <Button component={Link} to={routes.users} color="inherit">
             Users
           </Button>
+          <Button component={Link} to={routes.spaces} color="inherit">
+            Spaces
+          </Button>
           <Button component={Link} to={routes.companyHome} color="inherit">
             Reservations
           </Button>
