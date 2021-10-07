@@ -5,7 +5,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 
-import { IAccordion, IAccordionDetail } from '../constants/types';
+import { IAccordion, IAccordionDetail } from '../../constants/types';
 import { useAccordionStyles } from './Accordion.style';
 
 interface IProps {

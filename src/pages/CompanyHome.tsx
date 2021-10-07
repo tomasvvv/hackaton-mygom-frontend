@@ -1,11 +1,18 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { makeStyles } from '@material-ui/core';
 
-import Accordion from '../components/Accordion';
-import { useCompanyHomeStyle } from './CompanyHome.style';
+import Accordion from '../components/accordion/Accordion';
+import Container from '../components/container/Container';
+import DateLine from '../components/date/DateLine';
+
+const useStyles = makeStyles(() => ({
+  title: {
+    textAlign: 'center',
+  },
+}));
 
 const Home: React.FC = (): JSX.Element => {
-  const classes = useCompanyHomeStyle();
+  const classes = useStyles();
 
   const accordionData = [
     {
@@ -55,9 +62,11 @@ const Home: React.FC = (): JSX.Element => {
       ],
     },
   ];
+
   return (
     <Container>
       <h1 className={classes.title}>Reservation</h1>
+      <DateLine />
       <Accordion accordionData={accordionData} />
     </Container>
   );
