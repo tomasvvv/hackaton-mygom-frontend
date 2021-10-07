@@ -7,7 +7,7 @@ export const userApi = createApi({
   reducerPath: 'usersApi',
   tagTypes: ['User'],
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_API_URL }),
-  endpoints: builder => ({
+  endpoints: (builder) => ({
     getUsers: builder.query<Array<IApiUserEntity>, void>({
       query: () => ApiRoutes.allUsers(),
       providesTags: ['User'],
@@ -16,7 +16,7 @@ export const userApi = createApi({
       IApiUserEntity,
       Partial<IApiUserEntity> & Pick<IApiUserEntity, 'id'>
     >({
-      query: body => ({
+      query: (body) => ({
         url: ApiRoutes.updateUser(body.id),
         method: 'PATCH',
         body,

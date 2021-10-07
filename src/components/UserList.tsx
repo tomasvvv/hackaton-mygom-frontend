@@ -11,7 +11,7 @@ interface IUserListProps {
 
 const UserList: React.FC<IUserListProps> = ({ users }): JSX.Element => (
   <ul>
-    {users?.map(user => (
+    {users?.map((user) => (
       <li key={user.id}>
         <Link to={reverse(routes.userProfile, { id: user.id })}>{user.name}</Link>
       </li>

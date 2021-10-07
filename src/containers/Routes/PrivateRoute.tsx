@@ -16,7 +16,7 @@ const PrivateRoute: React.FC<IPrivateRouteProps & RouteComponentProps> = (
   const { fallback, component, path } = props;
 
   if (!authorized) {
-    return <Redirect to='/' />;
+    return <Redirect to="/" />;
   }
 
   return (

@@ -17,8 +17,9 @@ const Users: React.FC = (): JSX.Element => {
       <hr />
       <button
         disabled={isUpdating}
-        type='button'
-        onClick={() => updateUser({ id: 1, name: 'Jonas' })}>
+        type="button"
+        onClick={() => updateUser({ id: 1, name: 'Jonas' })}
+      >
         Update user with ID 1
       </button>
       <div>{data && <UserList users={data} />}</div>
