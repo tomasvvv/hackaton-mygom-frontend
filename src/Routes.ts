@@ -2,20 +2,20 @@ import React from 'react';
 
 import { TRouteType } from './containers/Routes/RouteManager';
 
-const Home = React.lazy(() => import(/* webpackChunkName: "HomePage" */ './pages/Home'));
+const CompanyHome = React.lazy(() => import(/* webpackChunkName: "CompanyHomePage" */ './pages/CompanyHome'));
 const NotFound = React.lazy(
   () => import(/* webpackChunkName: "NotFound" */ './containers/Error/NotFound'),
 );
 
 export const routes = {
-  home: '/',
+  companyHome: '/',
 };
 
 export const Routes: TRouteType = {
-  home: {
-    path: routes.home,
+  companyHome: {
+    path: routes.companyHome,
     exact: true,
-    component: Home,
+    component: CompanyHome,
   },
   notFound: {
     path: '*',
