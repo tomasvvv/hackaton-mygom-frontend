@@ -10,10 +10,12 @@ import {
   TableRow,
 } from '@mui/material';
 
-import { useGetUsersQuery } from '../services/UserService';
+import { useAddUserMutation, useGetUsersQuery } from '../services/UserService';
 
 const Users = React.memo(() => {
   const { data } = useGetUsersQuery();
+  // eslint-disable-next-line no-unused-vars
+  const [addUser] = useAddUserMutation();
 
   return (
     <Container>
