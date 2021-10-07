@@ -4,6 +4,7 @@ import { TRouteType } from './containers/Routes/RouteManager';
 
 const CompanyHome = React.lazy(() => import(/* webpackChunkName: "CompanyHomePage" */ './pages/CompanyHome'));
 const Login = React.lazy(() => import(/* webpackChunkName: "LoginPage" */ './pages/Login'));
+const Users = React.lazy(() => import(/* webpackChunkName: "UsersPage" */ './pages/Users'));
 const NotFound = React.lazy(
   () => import(/* webpackChunkName: "NotFound" */ './containers/Error/NotFound'),
 );
@@ -25,7 +26,7 @@ export const Routes: TRouteType = {
     path: routes.users,
     exact: true,
     authorized: true,
-    component: CompanyHome,
+    component: Users,
   },
   login: {
     path: routes.login,
