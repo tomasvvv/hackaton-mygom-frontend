@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Button,
@@ -14,7 +14,11 @@ import {
 } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-import { useAddUserMutation, useGetUsersQuery } from '../services/UserService';
+import {
+  useAddUserMutation,
+  useGetUsersQuery,
+  useRemoveUserMutation,
+} from '../services/UserService';
 
 const useUserStyles = makeStyles(() => ({
   modal: {
@@ -43,9 +47,26 @@ const Users = React.memo(() => {
   const { data } = useGetUsersQuery();
   // eslint-disable-next-line no-unused-vars
   const [addUser] = useAddUserMutation();
+  const [removeUser] = useRemoveUserMutation();
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  const [name, setName] = useState('');
+  const [role, setRole] = useState('');
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault?.();
+
+    addUser({
+      name,
+      role,
+    });
+  };
+
+  const handleDelete = (id: string) => {
+    removeUser(id);
+  };
 
   return (
     <Container>
@@ -58,6 +79,7 @@ const Users = React.memo(() => {
             <TableRow>
               <TableCell>Name</TableCell>
               <TableCell>Role</TableCell>
+              <TableCell>&nbsp;</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -65,6 +87,9 @@ const Users = React.memo(() => {
               <TableRow>
                 <TableCell>{user.name}</TableCell>
                 <TableCell>{user.role}</TableCell>
+                <TableCell>
+                  <Button onClick={() => handleDelete(user.id)}>Delete</Button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -77,11 +102,27 @@ const Users = React.memo(() => {
         aria-describedby="modal-modal-description"
       >
         <div className={classes.modal}>
-          <Typography variant="h5" mb="1rem">Add user</Typography>
-          <form className={classes.form}>
+          <Typography variant="h5" mb="1rem">
+            Add user
+          </Typography>
+          <form className={classes.form} onSubmit={handleSubmit}>
             <div className={classes.fields}>
-              <TextField required id="outlined-required" label="Name" />
-              <TextField required id="outlined-required" label="Role" />
+              <TextField
+                required
+                value={name}
+                id="name"
+                name="name"
+                label="Name"
+                onChange={(e) => setName(e.target.value)}
+              />
+              <TextField
+                required
+                value={role}
+                id="role"
+                name="role"
+                label="Role"
+                onChange={(e) => setRole(e.target.value)}
+              />
             </div>
             <Button
               variant="contained"

@@ -6,6 +6,9 @@ import { IApiSpaceEntity } from '../store/types/Space';
 export const spacesApi = createApi({
   reducerPath: 'spacesApi',
   tagTypes: ['Space'],
+  refetchOnMountOrArgChange: 0,
+  refetchOnReconnect: true,
+  keepUnusedDataFor: 0,
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_API_URL }),
   endpoints: (builder) => ({
     getSpaces: builder.query<Array<IApiSpaceEntity>, void>({
