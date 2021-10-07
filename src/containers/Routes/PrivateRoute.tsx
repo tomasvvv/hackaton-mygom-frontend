@@ -2,6 +2,7 @@ import React, { ReactNode, Suspense } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 
+import { Navbar } from '../../components/Navigation/Navbar';
 import { routes } from '../../Routes';
 import { StorageService } from '../../services/StorageService';
 
@@ -24,6 +25,7 @@ const PrivateRoute: React.FC<IPrivateRouteProps & RouteComponentProps> = (
 
   return (
     <Suspense fallback={fallback}>
+      <Navbar />
       <Route component={component} exact path={path} {...rest} />
     </Suspense>
   );

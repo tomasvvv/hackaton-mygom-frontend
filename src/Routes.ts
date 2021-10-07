@@ -11,6 +11,7 @@ const NotFound = React.lazy(
 export const routes = {
   companyHome: '/',
   login: '/login',
+  users: '/users',
 };
 
 export const Routes: TRouteType = {
@@ -19,6 +20,12 @@ export const Routes: TRouteType = {
     exact: true,
     component: CompanyHome,
     authorized: true,
+  },
+  users: {
+    path: routes.users,
+    exact: true,
+    authorized: true,
+    component: CompanyHome,
   },
   login: {
     path: routes.login,
