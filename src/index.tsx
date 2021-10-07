@@ -1,10 +1,8 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import * as Sentry from '@sentry/react';
 
-import i18n from './lib/i18next';
 import { store } from './store/Store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -17,11 +15,9 @@ Sentry.init({
 
 ReactDOM.render(
   <Provider store={store}>
-    <I18nextProvider i18n={i18n}>
-      <StrictMode>
-        <App />
-      </StrictMode>
-    </I18nextProvider>
+    <StrictMode>
+      <App />
+    </StrictMode>
   </Provider>,
   document.getElementById('root'),
 );
