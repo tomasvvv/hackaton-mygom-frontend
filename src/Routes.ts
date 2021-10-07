@@ -3,12 +3,14 @@ import React from 'react';
 import { TRouteType } from './containers/Routes/RouteManager';
 
 const CompanyHome = React.lazy(() => import(/* webpackChunkName: "CompanyHomePage" */ './pages/CompanyHome'));
+const Login = React.lazy(() => import(/* webpackChunkName: "LoginPage" */ './pages/Login'));
 const NotFound = React.lazy(
   () => import(/* webpackChunkName: "NotFound" */ './containers/Error/NotFound'),
 );
 
 export const routes = {
   companyHome: '/',
+  login: '/login',
 };
 
 export const Routes: TRouteType = {
@@ -16,6 +18,12 @@ export const Routes: TRouteType = {
     path: routes.companyHome,
     exact: true,
     component: CompanyHome,
+    authorized: true,
+  },
+  login: {
+    path: routes.login,
+    exact: true,
+    component: Login,
   },
   notFound: {
     path: '*',
