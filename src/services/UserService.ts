@@ -23,7 +23,7 @@ export const userApi = createApi({
       }),
       invalidatesTags: ['User'],
     }),
-    removeUser: builder.mutation<null, string>({
+    removeUser: builder.mutation<null, number>({
       query: (body) => ({
         url: ApiRoutes.addUser(),
         method: 'DELETE',

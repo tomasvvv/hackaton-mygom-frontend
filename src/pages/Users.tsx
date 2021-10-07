@@ -64,7 +64,7 @@ const Users = React.memo(() => {
     });
   };
 
-  const handleDelete = (id: string) => {
+  const handleDelete = (id: number) => {
     removeUser(id);
   };
 

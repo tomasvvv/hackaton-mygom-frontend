@@ -12,7 +12,8 @@ const reducers = combineReducers({
 
 const store = configureStore({
   reducer: reducers,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userApi.middleware),
+  // eslint-disable-next-line max-len
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(userApi.middleware).concat(spacesApi.middleware),
 });
 
 export { store };

@@ -1,5 +1,5 @@
 export interface IApiUserEntity {
-  id: string;
+  id: number;
   name: string;
   role: string;
 }

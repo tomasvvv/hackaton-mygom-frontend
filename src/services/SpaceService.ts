@@ -23,7 +23,15 @@ export const spacesApi = createApi({
       }),
       invalidatesTags: ['Space'],
     }),
+    removeSpace: builder.mutation<null, number>({
+      query: (body) => ({
+        url: ApiRoutes.spaces(),
+        method: 'DELETE',
+        body,
+      }),
+      invalidatesTags: ['Space'],
+    }),
   }),
 });
 
-export const { useGetSpacesQuery, useAddSpaceMutation } = spacesApi;
+export const { useGetSpacesQuery, useRemoveSpaceMutation, useAddSpaceMutation } = spacesApi;

@@ -64,7 +64,6 @@ const Home: React.FC = (): JSX.Element => {
           title: 'Table nr. 2',
           employer: '-',
           isReserved: false,
-
         },
         {
           title: 'Table nr. 3',
