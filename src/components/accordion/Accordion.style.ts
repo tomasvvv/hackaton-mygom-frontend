@@ -2,8 +2,8 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 export const useAccordionStyles = makeStyles((theme) => createStyles({
   accordionWrapper: {
-    maxWidth: '50rem',
     margin: '0 auto',
+    width: '100%',
   },
   details: {
     display: 'flex',

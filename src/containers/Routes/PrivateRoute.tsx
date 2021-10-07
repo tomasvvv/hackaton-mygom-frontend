@@ -16,7 +16,7 @@ const PrivateRoute: React.FC<IPrivateRouteProps & RouteComponentProps> = (
   ...rest
 ) => {
   // Authorization logic
-  const authorized = !!StorageService.getAccessToken();
+  const authorized = !StorageService.getAccessToken();
   const { fallback, component, path } = props;
 
   if (!authorized) {
