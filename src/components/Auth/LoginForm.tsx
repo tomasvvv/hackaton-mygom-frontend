@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FormEvent, useState } from 'react';
 import { Button, Grid, TextField } from '@mui/material';
 import { createStyles, makeStyles } from '@mui/styles';
 
@@ -29,7 +29,10 @@ const LoginForm: React.FC<IProps> = React.memo(({ onSubmit }) => {
   const [password, setPassword] = useState('');
   const classes = useLoginFormStyles();
 
-  const handleFormSubmit = () => onSubmit(name, password);
+  const handleFormSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    await onSubmit(name, password);
+  };
 
   return (
     <div className={classes.root}>
@@ -62,7 +65,7 @@ const LoginForm: React.FC<IProps> = React.memo(({ onSubmit }) => {
           <Grid item xs={12}>
             <Button
               variant="contained"
-              type="button"
+              type="submit"
               color="primary"
             >
               Log in
