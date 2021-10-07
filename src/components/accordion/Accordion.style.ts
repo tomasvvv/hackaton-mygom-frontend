@@ -16,4 +16,8 @@ export const useAccordionStyles = makeStyles((theme) => createStyles({
     width: '100%',
     padding: theme.spacing(0.5, 1),
   },
+  center: {
+    display: 'flex',
+    alignItems: 'center',
+  },
 }));

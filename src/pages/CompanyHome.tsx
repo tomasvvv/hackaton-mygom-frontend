@@ -27,14 +27,17 @@ const Home: React.FC = (): JSX.Element => {
         {
           title: 'Table nr. 1',
           employer: 'Jonukas',
+          isReserved: true,
         },
         {
           title: 'Table nr. 2',
           employer: '-',
+          isReserved: false,
         },
         {
           title: 'Table nr. 3',
           employer: 'Antanas',
+          isReserved: true,
         },
       ],
     },
@@ -50,14 +53,18 @@ const Home: React.FC = (): JSX.Element => {
         {
           title: 'Table nr. 1',
           employer: 'Jonukas',
+          isReserved: true,
         },
         {
           title: 'Table nr. 2',
           employer: '-',
+          isReserved: false,
+
         },
         {
           title: 'Table nr. 3',
           employer: 'Antanas',
+          isReserved: true,
         },
       ],
     },

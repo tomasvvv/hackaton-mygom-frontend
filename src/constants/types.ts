@@ -6,6 +6,7 @@ interface ISpaces {
 export interface IAccordionDetail {
     title: string,
     employer: string,
+    isReserved: boolean,
 }
 
 interface ISummary {

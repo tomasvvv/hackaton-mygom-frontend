@@ -1,4 +1,6 @@
 import * as React from 'react';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CircleOutlinedIcon from '@mui/icons-material/CircleOutlined';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Typography } from '@mui/material';
 import Accordion from '@mui/material/Accordion';
@@ -35,7 +37,13 @@ const SimpleAccordion: React.FC<IProps> = ({ accordionData }): JSX.Element => {
           <AccordionDetails>
             {accordion.details.map((detail: IAccordionDetail) => (
               <div className={classes.details}>
-                <Typography>{detail.title}</Typography>
+                <div className={classes.center}>
+                  {detail.isReserved ? <CheckCircleIcon /> : <CircleOutlinedIcon />}
+                  <Typography ml="0.5rem">
+                    {detail.title}
+                  </Typography>
+
+                </div>
                 <Typography>{detail.employer}</Typography>
               </div>
             ))}
