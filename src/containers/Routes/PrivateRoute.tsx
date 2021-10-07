@@ -2,6 +2,9 @@ import React, { ReactNode, Suspense } from 'react';
 import { RouteComponentProps, withRouter } from 'react-router';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 
+import { routes } from '../../Routes';
+import { StorageService } from '../../services/StorageService';
+
 interface IPrivateRouteProps extends RouteProps {
   component: React.ComponentClass | React.FC;
   fallback: NonNullable<ReactNode> | null;
@@ -12,11 +15,11 @@ const PrivateRoute: React.FC<IPrivateRouteProps & RouteComponentProps> = (
   ...rest
 ) => {
   // Authorization logic
-  const authorized = false;
+  const authorized = !!StorageService.getAccessToken();
   const { fallback, component, path } = props;
 
   if (!authorized) {
-    return <Redirect to="/" />;
+    return <Redirect to={routes.login} />;
   }
 
   return (
