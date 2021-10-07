@@ -19,14 +19,14 @@ const Home: React.FC = (): JSX.Element => {
       summary: {
         title: 'Open space',
         spaces: {
-          free: 1,
-          total: 10,
+          free: 5,
+          total: 30,
         },
       },
       details: [
         {
           title: 'Table nr. 1',
-          employer: 'Jonukas',
+          employer: 'Kestis',
           isReserved: true,
         },
         {
@@ -39,14 +39,19 @@ const Home: React.FC = (): JSX.Element => {
           employer: 'Antanas',
           isReserved: true,
         },
+        {
+          title: 'Table nr. 3',
+          employer: 'Jonas',
+          isReserved: true,
+        },
       ],
     },
     {
       summary: {
         title: 'Office #1',
         spaces: {
-          free: 8,
-          total: 15,
+          free: 1,
+          total: 3,
         },
       },
       details: [
@@ -63,7 +68,7 @@ const Home: React.FC = (): JSX.Element => {
         },
         {
           title: 'Table nr. 3',
-          employer: 'Antanas',
+          employer: 'Algis',
           isReserved: true,
         },
       ],
