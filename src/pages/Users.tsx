@@ -25,12 +25,14 @@ const Users = React.memo(() => {
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
+              <TableCell>Role</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {data?.map((user) => (
               <TableRow>
                 <TableCell>{user.name}</TableCell>
+                <TableCell>{user.role}</TableCell>
               </TableRow>
             ))}
           </TableBody>

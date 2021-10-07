@@ -12,6 +12,17 @@ export const userApi = createApi({
       query: () => ApiRoutes.allUsers(),
       providesTags: ['User'],
     }),
+    addUser: builder.mutation<
+        IApiUserEntity,
+        Partial<IApiUserEntity>
+        >({
+          query: (body) => ({
+            url: ApiRoutes.addUser(),
+            method: 'POST',
+            body,
+          }),
+          invalidatesTags: ['User'],
+        }),
   }),
 });
 
